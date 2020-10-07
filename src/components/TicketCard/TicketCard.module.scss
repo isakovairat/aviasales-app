@@ -27,3 +27,43 @@
   color: $textBody;
 }
 
+.card__logo {
+  margin-right: 30px;
+  width: 110px;
+  height: 36px;
+  background: url("../../media/S7.png") no-repeat 50%;
+}
+
+@mixin card__tickets {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: 10px;
+
+}
+
+.card__tickets_header {
+  @include card__tickets;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.card__tickets_ticket {
+  @include card__tickets;
+}
+
+.card__tickets_ticket:last-child {
+  margin-bottom: 0;
+}
+
+.card__parts {
+  display: flex;
+  flex-direction: column;
+  flex-basis: 33%;
+}
+
+@media screen and (min-width: $mobile-s) and (max-width: $mobile-l) {
+  .card__logo {
+    margin-right: 0;
+  }
+}

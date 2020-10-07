@@ -66,38 +66,18 @@ body {
   border-top-right-radius: $borderRadius;
 }
 
-.ant-radio-button-wrapper-checked:not(.ant-radio-button-wrapper-disabled) {
-  border: 1px solid #DFE5EC;
-  color: $textBody;
-  border-left: none;
-}
-
-.ant-radio-button-wrapper-checked:not([class*=' ant-radio-button-wrapper-disabled']).ant-radio-button-wrapper:first-child {
-  border: 1px solid #DFE5EC;
-  border-right: none;
-}
-
-.ant-radio-button-wrapper-checked:not(.ant-radio-button-wrapper-disabled)::before {
-  background-color: transparent;
-}
-
-.ant-radio-button-wrapper-checked:not(.ant-radio-button-wrapper-disabled):hover::before {
-  background-color: transparent;
-}
-
-.ant-radio-button-wrapper-checked {
-  color: #FFFFFF;
-}
-
-.ant-radio-button-wrapper-checked:not(.ant-radio-button-wrapper-disabled):hover {
-  border-color: transparent;
-}
-
 .ant-card {
   border-radius: $borderRadius;
   box-shadow: $boxShadow;
+  margin-bottom: 20px;
+}
+
+.ant-card:last-child {
+  margin-bottom: 0;
 }
 
 .ant-card-body {
+  display: flex;
+  flex-direction: column;
   padding: 20px;
 }

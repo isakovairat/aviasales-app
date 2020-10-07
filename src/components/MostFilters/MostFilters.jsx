@@ -15,7 +15,7 @@ const MostFilters = () => {
 
   return (
     <div style={{marginBottom: '20px'}}>
-      <Radio.Group>
+      <Radio.Group defaultValue={'Самый дешевый'} buttonStyle="solid">
         {mostButtons}
       </Radio.Group>
     </div>
