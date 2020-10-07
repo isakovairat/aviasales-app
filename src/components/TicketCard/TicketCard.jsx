@@ -1,5 +1,5 @@
-import React from "react";
-import { Card } from "antd";
+import React from 'react';
+import { Card } from 'antd';
 import classes from './TicketCard.module.scss';
 
 const TicketCard = () => {
@@ -7,7 +7,7 @@ const TicketCard = () => {
     <Card>
       <div className={classes.card__tickets_header}>
         <span className={classes.price}>13 400 P</span>
-        <div className={classes.card__logo}/>
+        <div className={classes.card__logo} />
       </div>
       <div className={classes.card__tickets_ticket}>
         <div className={classes.card__parts}>
@@ -39,6 +39,6 @@ const TicketCard = () => {
       </div>
     </Card>
   );
-}
+};
 
 export default TicketCard;

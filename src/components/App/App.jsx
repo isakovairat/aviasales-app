@@ -1,24 +1,24 @@
-import React from "react";
-import Header from "../Header";
-import TransferFilters from "../TransferFilters";
-import MostFilters from "../MostFilters";
-import TicketCard from "../TicketCard";
+import React from 'react';
+import Header from '../Header';
+import TransferFilters from '../TransferFilters';
+import MostFilters from '../MostFilters';
+import TicketCard from '../TicketCard';
 
 import classes from './App.module.scss';
 
 const App = () => {
   return (
     <>
-      <Header/>
+      <Header />
       <div className={classes.container}>
-        <TransferFilters/>
+        <TransferFilters />
         <div className={classes.mostFiltersAndTicketsCardsContainer}>
-          <MostFilters/>
-          <TicketCard/>
+          <MostFilters />
+          <TicketCard />
         </div>
       </div>
     </>
   );
-}
+};
 
 export default App;

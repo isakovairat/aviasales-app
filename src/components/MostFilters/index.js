@@ -1,3 +1,3 @@
-import MostFilters from "./MostFilters";
+import MostFilters from './MostFilters';
 
 export default MostFilters;

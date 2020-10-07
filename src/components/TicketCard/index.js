@@ -1,3 +1,3 @@
-import TicketCard from "./TicketCard";
+import TicketCard from './TicketCard';
 
 export default TicketCard;
