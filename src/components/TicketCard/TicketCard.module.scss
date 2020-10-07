@@ -1,0 +1,29 @@
+@import "../../styles/variables.scss";
+
+.price {
+  font-style: normal;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 24px;
+  color: $textPrimary;
+  text-transform: uppercase;
+}
+
+.secondary {
+  font-style: normal;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 18px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  color: $textSecondary;
+}
+
+.primary {
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 21px;
+  color: $textBody;
+}
+

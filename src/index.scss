@@ -1,0 +1,103 @@
+@import '~antd/dist/antd.css';
+@import "styles/fonts.scss";
+@import "styles/variables.scss";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: $fontFamily;
+  background-color: $bgMain;
+}
+
+.ant-checkbox-wrapper {
+  height: 40px;
+  display: flex;
+  align-items: center;
+  padding-left: 20px;
+
+  &:hover {
+    background-color: $bgHover;
+  }
+}
+
+.ant-checkbox-wrapper + .ant-checkbox-wrapper {
+  margin-left: 0;
+}
+
+.ant-checkbox-inner {
+  height: 20px;
+  width: 20px;
+}
+
+.ant-radio-group {
+  display: flex;
+  width: 100%;
+}
+
+.ant-radio-button-wrapper {
+  height: 50px;
+  width: 50%;
+  border: none;
+  padding: 0;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  border-radius: $borderRadius;
+}
+
+.ant-radio-button-wrapper:first-child {
+  border-bottom-left-radius: $borderRadius;
+  border-top-left-radius: $borderRadius;
+}
+
+.ant-radio-button-wrapper:last-child {
+  border-bottom-right-radius: $borderRadius;
+  border-top-right-radius: $borderRadius;
+}
+
+.ant-radio-button-wrapper-checked:not(.ant-radio-button-wrapper-disabled) {
+  border: 1px solid #DFE5EC;
+  color: $textBody;
+  border-left: none;
+}
+
+.ant-radio-button-wrapper-checked:not([class*=' ant-radio-button-wrapper-disabled']).ant-radio-button-wrapper:first-child {
+  border: 1px solid #DFE5EC;
+  border-right: none;
+}
+
+.ant-radio-button-wrapper-checked:not(.ant-radio-button-wrapper-disabled)::before {
+  background-color: transparent;
+}
+
+.ant-radio-button-wrapper-checked:not(.ant-radio-button-wrapper-disabled):hover::before {
+  background-color: transparent;
+}
+
+.ant-radio-button-wrapper-checked {
+  color: #FFFFFF;
+}
+
+.ant-radio-button-wrapper-checked:not(.ant-radio-button-wrapper-disabled):hover {
+  border-color: transparent;
+}
+
+.ant-card {
+  border-radius: $borderRadius;
+  box-shadow: $boxShadow;
+}
+
+.ant-card-body {
+  padding: 20px;
+}

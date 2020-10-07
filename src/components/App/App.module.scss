@@ -1,0 +1,25 @@
+@import '../../styles/variables.scss';
+
+.container {
+  max-width: 754px;
+  margin: 0 auto;
+  display: flex;
+}
+
+.mostFiltersAndTicketsCardsContainer {
+  width: 504px;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+}
+
+@media screen and (min-width: $mobile-s) and (max-width: $mobile-l) {
+  .container {
+    width: 90%;
+    flex-direction: column;
+  }
+
+  .mostFiltersAndTicketsCardsContainer {
+    width: 90%;
+  }
+}

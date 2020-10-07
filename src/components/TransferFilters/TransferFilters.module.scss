@@ -1,0 +1,31 @@
+@import '../../styles/variables.scss';
+
+.transfer {
+  width: 232px;
+  height: 252px;
+  padding: 20px 0;
+  margin-right: 20px;
+  background-color: $bgBody;
+  box-shadow: $boxShadow;
+  border-radius: $borderRadius;
+  display: flex;
+  flex-direction: column;
+}
+
+.title {
+  font-style: normal;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 12px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+@media screen and (min-width: $mobile-s) and (max-width: $mobile-l) {
+  .transfer {
+    width: 90%;
+    margin: 0 auto 20px;
+  }
+}
