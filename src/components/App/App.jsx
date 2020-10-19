@@ -1,24 +1,19 @@
 import React from 'react';
-import Header from '../Header';
-import TransferFilters from '../TransferFilters';
-import MostFilters from '../MostFilters';
-import TicketCard from '../TicketCard';
+import { Provider } from 'react-redux';
+import PropTypes from 'prop-types';
+import AviaContainer from '../AviaContainer';
 
-import classes from './App.module.scss';
-
-const App = () => {
+const App = ({ store }) => {
   return (
-    <>
-      <Header />
-      <div className={classes.container}>
-        <TransferFilters />
-        <div className={classes.mostFiltersAndTicketsCardsContainer}>
-          <MostFilters />
-          <TicketCard />
-        </div>
-      </div>
-    </>
+    <Provider store={store}>
+      <AviaContainer />
+    </Provider>
   );
+};
+
+App.propTypes = {
+  // eslint-disable-next-line react/forbid-prop-types
+  store: PropTypes.object.isRequired,
 };
 
 export default App;

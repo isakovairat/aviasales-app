@@ -38,7 +38,7 @@ TransferFilters.defaultProps = {
 
 TransferFilters.propTypes = {
   transferFilters: PropTypes.arrayOf(
-    PropTypes.objectOf({
+    PropTypes.shape({
       id: PropTypes.string,
       title: PropTypes.string,
       isChecked: PropTypes.bool,
@@ -55,15 +55,11 @@ const mapStateToProps = (state) => {
 };
 
 const mapDispatchToProps = (dispatch) => {
-  const { transferFiltersCheck, transferFiltersCheckAll, transferFiltersUncheckAll } = bindActionCreators(
-    actions,
-    dispatch
-  );
+  const { transferFiltersCheck, transferFiltersCheckAll } = bindActionCreators(actions, dispatch);
 
   return {
     transferFiltersCheck,
     transferFiltersCheckAll,
-    transferFiltersUncheckAll,
   };
 };
 

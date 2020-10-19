@@ -31,7 +31,7 @@ MostFilters.defaultProps = {
 
 MostFilters.propTypes = {
   mostFilters: PropTypes.arrayOf(
-    PropTypes.objectOf({
+    PropTypes.shape({
       id: PropTypes.string,
       title: PropTypes.string,
       isChecked: PropTypes.bool,
@@ -49,9 +49,7 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
   const { mostFiltersCheck } = bindActionCreators(actions, dispatch);
 
-  return {
-    mostFiltersCheck,
-  };
+  return { mostFiltersCheck };
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(MostFilters);
