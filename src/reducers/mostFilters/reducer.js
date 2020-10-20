@@ -6,7 +6,7 @@ const mostFiltersReducer = (state = defaultState, action) => {
     case MOST_FILTERS_CHECK:
       return state.map((filter) => {
         // eslint-disable-next-line no-param-reassign
-        filter.isChecked = !filter.isChecked;
+        filter.isChecked = filter.id === action.payload;
 
         return filter;
       });

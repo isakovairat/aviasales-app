@@ -13,6 +13,14 @@
   margin: 0 auto;
 }
 
+.pageContainer {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 @media screen and (min-width: $mobile-s) and (max-width: $mobile-l) {
   .container {
     width: 90%;

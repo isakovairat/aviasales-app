@@ -23,9 +23,10 @@ const transferFiltersCheckAll = () => {
   };
 };
 
-const mostFiltersCheck = () => {
+const mostFiltersCheck = (checkboxId) => {
   return {
     type: MOST_FILTERS_CHECK,
+    payload: checkboxId,
   };
 };
 
@@ -37,24 +38,7 @@ const getTickets = () => {
     dispatch({ type: GET_SEARCH_ID_SUCCESS, payload: searchId });
     const tickets = await fetchTickets(searchId.searchId);
     dispatch({ type: GET_TICKETS_SUCCESS, payload: tickets });
-
-    // .then(response => {
-    //   dispatch({type: GET_TICKETS_SUCCESS, payload: response});
-    // })
-    // .then(response => {
-    //   dispatch({type: GET_SEARCH_ID_SUCCESS, payload: response});
-    // }
   };
 };
-
-// const getTickets = (searchId) => {
-//   return (dispatch) => {
-//     dispatch({type: GET_TICKETS_REQUEST});
-//     fetchTickets(searchId)
-//       .then(response => {
-//         dispatch({type: GET_TICKETS_SUCCESS, payload: response});
-//       })
-//   }
-// }
 
 export { mostFiltersCheck, transferFiltersCheck, transferFiltersCheckAll, getTickets };

@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+import { Spin } from 'antd';
 import Header from '../Header';
 import classes from './AviaContainer.module.scss';
 import TransferFilters from '../TransferFilters';
@@ -14,22 +15,21 @@ const AviaContainer = ({ searchId, getTicketsAction }) => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  return (
+  return !searchId.isLoading ? (
     <>
-      {searchId.isLoading && <h1>ГРУЗИТСЯ</h1>}
-      {!searchId.isLoading && (
-        <>
-          <Header />
-          <div className={classes.container}>
-            <TransferFilters />
-            <div className={classes.mostFiltersAndTicketsCardsContainer}>
-              <MostFilters />
-              <TicketsContainer />
-            </div>
-          </div>
-        </>
-      )}
+      <Header />
+      <div className={classes.container}>
+        <TransferFilters />
+        <div className={classes.mostFiltersAndTicketsCardsContainer}>
+          <MostFilters />
+          <TicketsContainer />
+        </div>
+      </div>
     </>
+  ) : (
+    <div className={classes.pageContainer}>
+      <Spin size="large" />
+    </div>
   );
 };
 

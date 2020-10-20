@@ -1,3 +1,17 @@
+@import '../../styles/variables.scss';
+
 .container {
   margin-bottom: 120px;
+}
+
+.empty {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: auto;
+  padding: 20px;
+  box-shadow: $boxShadow;
+  background-color: $bgBody;
+  border-radius: $borderRadius;
 }
