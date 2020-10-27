@@ -2,12 +2,12 @@ const defaultState = [
   {
     id: '4',
     title: 'Все',
-    isChecked: false,
+    isChecked: true,
   },
   {
     id: '0',
     title: 'Без пересадок',
-    isChecked: false,
+    isChecked: true,
   },
   {
     id: '1',
@@ -17,12 +17,12 @@ const defaultState = [
   {
     id: '2',
     title: '2 пересадки',
-    isChecked: false,
+    isChecked: true,
   },
   {
     id: '3',
     title: '3 пересадки',
-    isChecked: false,
+    isChecked: true,
   },
 ];
 

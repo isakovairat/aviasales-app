@@ -6,7 +6,12 @@ const ticketsReducer = (state = defaultState, action) => {
     case GET_TICKETS_REQUEST:
       return { ...state, isLoading: true };
     case GET_TICKETS_SUCCESS:
-      return { ...state, isLoading: false, tickets: action.payload.tickets, stop: action.payload.stop };
+      return {
+        ...state,
+        isLoading: false,
+        tickets: [...state.tickets, ...action.payload.tickets],
+        stop: action.payload.stop,
+      };
     default:
       return state;
   }

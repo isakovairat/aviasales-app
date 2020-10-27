@@ -3,7 +3,7 @@ import { TRANSFER_FILTERS_CHECK, TRANSFER_FILTERS_CHECK_ALL } from '../../action
 
 function transferFiltersCheck(prevState, checkboxId) {
   return prevState.map((filter) => {
-    if (filter.id === '1' && filter.isChecked) {
+    if (filter.id === '4' && filter.isChecked) {
       // eslint-disable-next-line no-param-reassign
       filter.isChecked = false;
     }

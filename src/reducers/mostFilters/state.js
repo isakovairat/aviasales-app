@@ -2,7 +2,7 @@ const defaultState = [
   {
     id: '1',
     title: 'Самый дешевый',
-    isChecked: false,
+    isChecked: true,
   },
   {
     id: '2',

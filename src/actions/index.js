@@ -36,8 +36,13 @@ const getTickets = () => {
     dispatch({ type: GET_TICKETS_REQUEST });
     const searchId = await fetchSearchId();
     dispatch({ type: GET_SEARCH_ID_SUCCESS, payload: searchId });
-    const tickets = await fetchTickets(searchId.searchId);
+    let tickets = await fetchTickets(searchId.searchId);
     dispatch({ type: GET_TICKETS_SUCCESS, payload: tickets });
+    while (!tickets.stop) {
+      // eslint-disable-next-line no-await-in-loop
+      tickets = await fetchTickets(searchId.searchId);
+      dispatch({ type: GET_TICKETS_SUCCESS, payload: tickets });
+    }
   };
 };
 
