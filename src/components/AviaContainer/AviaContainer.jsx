@@ -38,7 +38,6 @@ AviaContainer.defaultProps = {
     searchId: '',
     isLoading: false,
   },
-  // getSearchIdAction: () => {},
   getTicketsAction: () => {},
 };
 
@@ -47,7 +46,6 @@ AviaContainer.propTypes = {
     searchId: PropTypes.string,
     isLoading: PropTypes.bool,
   }),
-  // getSearchIdAction: PropTypes.func,
   getTicketsAction: PropTypes.func,
 };
 
@@ -60,7 +58,6 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    // getSearchIdAction: () => dispatch(getSearchId()),
     getTicketsAction: (searchId) => dispatch(getTickets(searchId)),
   };
 };

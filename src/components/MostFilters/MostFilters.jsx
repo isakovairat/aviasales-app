@@ -18,6 +18,7 @@ const MostFilters = ({ mostFilters, mostFiltersCheck }) => {
   return (
     <div className={classes.container}>
       <Radio.Group
+        defaultValue="1"
         buttonStyle="solid"
         onChange={(event) => {
           mostFiltersCheck(event.target.value);

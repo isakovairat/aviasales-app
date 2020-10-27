@@ -8,7 +8,7 @@ import * as actions from '../../actions';
 
 const TransferFilters = ({ transferFilters, transferFiltersCheck, transferFiltersCheckAll }) => {
   const transferCheckboxes = transferFilters.map((filter) => {
-    if (+filter.id === 1) {
+    if (filter.id === '4') {
       return (
         <Checkbox key={filter.id} onChange={transferFiltersCheckAll} checked={filter.isChecked}>
           {filter.title}
