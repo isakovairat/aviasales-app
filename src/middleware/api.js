@@ -9,10 +9,18 @@ const getSearchId = async () => {
 };
 
 const getTickets = async (searchId) => {
-  const response = await fetch(`${API_ROOT}tickets?searchId=${searchId}`);
-  const data = await response.json();
-
-  return data;
+  try {
+    const response = await fetch(`${API_ROOT}tickets?searchId=${searchId}`);
+    if (!response.ok) {
+      throw response.status;
+    }
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    const response = await fetch(`${API_ROOT}tickets?searchId=${searchId}`);
+    const data = await response.json();
+    return data;
+  }
 };
 
 export { getSearchId, getTickets, URL_CARRIER };
