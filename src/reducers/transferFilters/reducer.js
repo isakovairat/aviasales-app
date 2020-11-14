@@ -4,12 +4,10 @@ import { TRANSFER_FILTERS_CHECK, TRANSFER_FILTERS_CHECK_ALL } from '../../action
 function transferFiltersCheck(prevState, checkboxId) {
   return prevState.map((filter) => {
     if (filter.id === '4' && filter.isChecked) {
-      // eslint-disable-next-line no-param-reassign
-      filter.isChecked = false;
+      return { ...filter, isChecked: false };
     }
     if (filter.id === checkboxId) {
-      // eslint-disable-next-line no-param-reassign
-      filter.isChecked = !filter.isChecked;
+      return { ...filter, isChecked: !filter.isChecked };
     }
 
     return filter;
@@ -18,11 +16,7 @@ function transferFiltersCheck(prevState, checkboxId) {
 
 function transferFiltersCheckAll(prevState) {
   const isAllCheckedAlready = prevState[0].isChecked;
-  return prevState.map((filter) => {
-    // eslint-disable-next-line no-param-reassign
-    filter.isChecked = !isAllCheckedAlready;
-    return filter;
-  });
+  return prevState.map((filter) => ({ ...filter, isChecked: !isAllCheckedAlready }));
 }
 
 const transferFiltersReducer = (state = defaultState, action) => {
