@@ -14,11 +14,11 @@ const TicketsContainer = ({ tickets, transferFilters, mostFilters }) => {
       // сортировка по пересадкам
       let ticketsForRender = [];
       transferFilters.forEach((filter) => {
-        if (filter.isChecked && filter.id !== '4') {
+        if (filter.isChecked && filter.id !== 4) {
           ticketsForRender = [
             ...ticketsForRender,
             ...allTickets.filter(
-              (ticket) => Math.max(ticket.segments[0].stops.length, ticket.segments[1].stops.length) === +filter.id
+              (ticket) => Math.max(ticket.segments[0].stops.length, ticket.segments[1].stops.length) === filter.id
             ),
           ];
         }
@@ -73,7 +73,7 @@ TicketsContainer.propTypes = {
   }),
   transferFilters: PropTypes.arrayOf(
     PropTypes.shape({
-      id: PropTypes.string,
+      id: PropTypes.number,
       title: PropTypes.string,
       isChecked: PropTypes.bool,
     })

@@ -3,7 +3,7 @@ import { TRANSFER_FILTERS_CHECK, TRANSFER_FILTERS_CHECK_ALL } from '../../action
 
 function transferFiltersCheck(prevState, checkboxId) {
   return prevState.map((filter) => {
-    if (filter.id === '4' && filter.isChecked) {
+    if (filter.id === 4 && filter.isChecked) {
       return { ...filter, isChecked: false };
     }
     if (filter.id === checkboxId) {
