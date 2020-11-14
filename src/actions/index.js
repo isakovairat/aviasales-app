@@ -8,7 +8,7 @@ import {
   GET_TICKETS_SUCCESS,
 } from './types';
 
-import { getSearchId as fetchSearchId, getTickets as fetchTickets } from '../middleware/api';
+import { getSearchId as fetchSearchId, getTickets as fetchTickets } from '../api';
 
 const transferFiltersCheck = (checkboxId) => {
   return {
