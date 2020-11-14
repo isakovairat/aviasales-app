@@ -4,6 +4,8 @@ import PropTypes from 'prop-types';
 import { Spin } from 'antd';
 import TicketCard from '../TicketCard';
 import * as classes from './TicketsContainer.module.scss';
+import sortTicketsByTransfers from '../../utils/sortTicketsByTransfers';
+import sortByMost from '../../utils/sortByMost';
 
 const TicketsContainer = ({ tickets, transferFilters, mostFilters }) => {
   const filtersIsEmpty = transferFilters.reduce((acc, filter) => (filter.isChecked ? acc + 1 : acc), 0);
@@ -11,29 +13,8 @@ const TicketsContainer = ({ tickets, transferFilters, mostFilters }) => {
 
   const ticketsRender = () => {
     if (filtersIsEmpty) {
-      // сортировка по пересадкам
-      let ticketsForRender = [];
-      transferFilters.forEach((filter) => {
-        if (filter.isChecked && filter.id !== 4) {
-          ticketsForRender = [
-            ...ticketsForRender,
-            ...allTickets.filter(
-              (ticket) => Math.max(ticket.segments[0].stops.length, ticket.segments[1].stops.length) === filter.id
-            ),
-          ];
-        }
-      });
-      // сортировка по самый дешевый/быстрый
-      if (mostFilters[0].isChecked) {
-        ticketsForRender.sort((ticketA, ticketB) => ticketA.price - ticketB.price);
-      }
-      if (mostFilters[1].isChecked) {
-        ticketsForRender.sort(
-          (ticketA, ticketB) =>
-            ticketA.segments.reduce((acc, segment) => acc + segment.duration, 0) -
-            ticketB.segments.reduce((acc, segment) => acc + segment.duration, 0)
-        );
-      }
+      const ticketsForRender = sortTicketsByTransfers(transferFilters, allTickets);
+      sortByMost(mostFilters, ticketsForRender);
       return ticketsForRender.slice(0, 5).map((ticket) => {
         return (
           <TicketCard
