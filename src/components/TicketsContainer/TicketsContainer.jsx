@@ -13,8 +13,8 @@ const TicketsContainer = ({ tickets, transferFilters, mostFilters }) => {
 
   const ticketsRender = () => {
     if (filtersIsEmpty) {
-      const ticketsForRender = sortTicketsByTransfers(transferFilters, allTickets);
-      sortByMost(mostFilters, ticketsForRender);
+      const sortedByTransfers = sortTicketsByTransfers(transferFilters, allTickets);
+      const ticketsForRender = sortByMost(mostFilters, sortedByTransfers);
       return ticketsForRender.slice(0, 5).map((ticket) => {
         return (
           <TicketCard

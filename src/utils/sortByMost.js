@@ -1,4 +1,6 @@
-const sortByMost = (mostFilters, ticketsForRender) => {
+const sortByMost = (mostFilters, sortedByTransfers) => {
+  const ticketsForRender = [...sortedByTransfers];
+
   if (mostFilters[0].isChecked) {
     ticketsForRender.sort((ticketA, ticketB) => ticketA.price - ticketB.price);
   }
@@ -9,6 +11,8 @@ const sortByMost = (mostFilters, ticketsForRender) => {
         ticketB.segments.reduce((acc, segment) => acc + segment.duration, 0)
     );
   }
+
+  return ticketsForRender;
 };
 
 export default sortByMost;
